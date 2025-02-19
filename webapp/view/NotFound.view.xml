@@ -1,0 +1,20 @@
+<mvc:View
+    controllerName="student.com.sap.training.advancedsapui5.fullscreen.controller.NotFound"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+>
+    <IllustratedMessage
+        illustrationType="{PageNotFound}"
+        title="{i18n>notFoundMessageTitle}"
+        description="{i18n>notFoundMessageDescription}"
+    >
+        <additionalContent>
+            <Button
+                text="Go Back"
+                press="onNavBack"
+            />
+        </additionalContent>
+    </IllustratedMessage>
+</mvc:View>

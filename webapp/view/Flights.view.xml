@@ -1,0 +1,69 @@
+<mvc:View controllerName="student.com.sap.training.advancedsapui5.fullscreen.controller.Flights"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:l="sap.ui.layout">
+    
+    <Page id="idFlightsPage" navButtonPress="onNavBack" showNavButton="true" title="{Carrname}">
+      
+        <content>
+            <l:VerticalLayout id="verticalLayout">
+                
+                <ObjectHeader id="objectHeader" title="{Carrname}" number="" numberUnit="{Currcode}" titleHref="{Url}">
+                    
+                    <attributes>
+                        <ObjectAttribute id="objectAttribute1" text="{Carrid}"/>
+                        <ObjectAttribute id="objectAttribute2" text="{Url}"/>
+                    </attributes>
+
+
+                </ObjectHeader>
+
+
+            </l:VerticalLayout>
+
+            
+            <Table id="idFlights" items="{path: 'to_Flight', sorter: {path: 'Carrid'}}"
+                    mode="SingleSelectMaster"
+                    growing="true"
+                    growingThreshold="10">
+                    
+                <headerToolbar>
+
+                    <Toolbar id="toolbar1">
+                        <Title id="title1" text="Flights" level="H2" />
+
+
+                    </Toolbar>
+
+                </headerToolbar>
+                
+                <columns>
+                    <Column id="flcarrnamecolumn"  width="12em">
+                        <Text id="flcarrnameheader" text="{i18n>carriername}" />
+                    </Column>
+                    <Column id="fldatecolumn">
+                        <Text id="fldateheader" text="{i18n>flightdate}" />
+                    </Column>
+                    <Column id="flseatmaxcolumn" minScreenWidth="Tablet" demandPopin="true">
+                        <Text id="seatmaxheader" text="{i18n>seatmax}" />
+                    </Column>
+                    <Column id="flseatocccolumn"  hAlign="Right" minScreenWidth="Tablet" demandPopin="true">
+                        <Text id="seatoccheader" text="{i18n>seatocc}" />
+                    </Column>
+                </columns>
+                
+                <items>
+                    <ColumnListItem id="flcolumnListItem">
+                        <cells>
+                            <ObjectIdentifier id="flobjectIdentifier" title="{Carrid}" text="{Carrid}" />
+                            <Text id="fldatetext" text="{path: 'Fldate', type: 'sap.ui.model.type.Date'}" />
+                            <Text id="flseatsmaxtext" text="{Seatsmax}" />
+                            <Text id="flseatsocctext" text="{Seatsocc}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+
+            </Table>
+
+        </content>
+    </Page>
+</mvc:View>
